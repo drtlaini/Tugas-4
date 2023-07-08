@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Form dengan Alert, Confirm, dan Prompt</title>
+  <style>
+body{
+    background-color: rgb(173, 173, 236);
+    margin: 0;
+    height: 100vh;
+    display: block;
+}
+  </style>
+  <meta http-equiv="X-UA-Compartible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    function validateForm() {
+      let name = prompt("Masukkan Nama Anda :");
+      if (name != null && name != "") {
+        let result = confirm("Apakah Anda yakin data yang Anda masukkan benar?");
+        if (result) {
+          alert("Data telah berhasil dikirim!");
+          return true;
+        } else {
+          alert("Data tidak jadi dikirim.");
+          return false;
+        }
+      } else {
+        alert("Nama tidak boleh kosong.");
+        return false;
+      }
+    }
+  </script>
+</head>
+<body>
+    <h2>LOGIN</h2>
+    <form onsubmit="return validateForm()">
+      <label for="name">Username:</label>
+      <input type="text" id="username" name="username" required><br><br>
+      <label for="email">Email:</label>
+      <input type="email" id="email" name="email" required><br><br>
+      <label for="Password">Password:</label>
+      <input type="password" id="password" name="password" required><br><br>
+      <input type="submit" value="Login">
+
+    </form>
+  </body>
+  </html>
